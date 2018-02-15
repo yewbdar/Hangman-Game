@@ -1,0 +1,57 @@
+.body{
+    font-size: 25px;
+    background-color: black;
+    color: gainsboro;
+}
+
+.playing-space-div {
+    /* border: 1px solid black; */
+    height: 9%;
+    text-align: center;
+}
+
+label{
+    display:block;
+}
+#gameover{
+    color: green;
+}
+#displayinput,#input,#chance{
+    color: white;
+    background-color: #3b5494;
+    /* background-color: bisque; */
+}
+div{
+    /* border: 1px solid black; */
+}
+section{
+    border: 1px solid black;
+    height: 100%;
+}
+.hangman-tittle{
+    width: 100%; 
+    height: 100%; 
+
+}
+.hangman-tittle-div{
+    
+    height: 240px;
+}
+.img-holder-div{
+    height: 500px;
+}
+.playing-space{
+    align-content: center;
+}
+img.hangman{
+  
+        display: block;
+        margin: 0 auto;
+        width: 40%;
+    
+}
+.gameover{
+    margin-top:6%;
+    font-size: 35px;
+    font-weight: bold;
+}
