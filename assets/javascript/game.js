@@ -1,5 +1,5 @@
 var game = {
-    words: ["color", "animals", "person", "beautifull", "javascript", "document", "index",],
+    words: ["color", "animals", "person", "beautifull", "javascript", "document", "index","welcome","goodbye","valentine"],
     secondWord: "animals",
     theredWord: "persone",
     dashes: [],
@@ -15,7 +15,7 @@ var game = {
         this.pressedKey = [];
         this.dashes = [];
 
-        for (let i = 0; i < word.length; i++) {
+        for (var i = 0; i < word.length; i++) {
             this.dashes[i] = "_";
         }
         document.getElementById("input").innerHTML = this.dashes.join(" ");
@@ -97,8 +97,8 @@ var game = {
                 //debugger;
                 this.chance = this.chance - 1;
                 document.getElementById("chance").innerHTML = this.chance.toString();
-                // var audio = new Audio('Error-tone.mp3');
-                //   audio.play();
+                 var audio = new Audio('assets/audio/Error-tone.mp3');
+                  audio.play();
                 if (this.chance === 0) {
                     game.changeImage(7);
                     document.getElementById("gameover").innerHTML = "Game Over";
@@ -130,7 +130,7 @@ var game = {
 
         if (this.firstTimePressKey === 0) {
             game.changeImage(1);
-            var randomNum = Math.floor((Math.random() * 5))
+            var randomNum = Math.floor((Math.random() * 9))
             randomWord = this.words[randomNum];
             game.displayInsertPlace(randomWord)
             document.getElementById("pressAnyKey").innerHTML = "Guess the word ";
@@ -157,6 +157,10 @@ var game = {
 document.onkeyup = function (e) {
     //debugger;
     game.stsrtGame(e.key);
-
+     
 }
-
+function playAudio(){
+    var audio = new Audio('assets/audio/Drum-loops-and-synth-loops.mp3');
+      audio.loop=true;            
+    audio.play();
+}
