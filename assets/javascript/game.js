@@ -114,14 +114,14 @@ var game = {
                 break
 
                 case 7:
-                game.changeImage(4);
+                game.changeImage(3);
                 break
 
                 case 5:
-                game.changeImage(5);
+                game.changeImage(4);
                 break
                 case 3:
-                game.changeImage(6);
+                game.changeImage(5);
                 break
                 case 1:
                 game.changeImage(6);
