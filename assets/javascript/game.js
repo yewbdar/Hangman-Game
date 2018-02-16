@@ -99,30 +99,35 @@ var game = {
                 document.getElementById("chance").innerHTML = this.chance.toString();
                  var audio = new Audio('assets/audio/Error-tone.mp3');
                   audio.play();
-                if (this.chance === 0) {
+                switch(this.chance){
+                case 0:
                     game.changeImage(7);
                     document.getElementById("gameover").innerHTML = "Game Over";
                     this.firstTimePressKey = 0;
-                }
-                if (this.chance === 11) {
+                break
+                case 11:
                     game.changeImage(2);
-                }
-                if (this.chance === 9) {
-                    game.changeImage(3);
-                }
-                if (this.chance === 7) {
-                    game.changeImage(3);
-                }
-                if (this.chance === 5) {
-                    game.changeImage(4);
-                }
-                if (this.chance === 3) {
-                    game.changeImage(5);
-                }
-                if (this.chance === 1) {
-                    game.changeImage(6);
-                }
+                break
+                case 9:
+                game.changeImage(3);
+  
+                break
 
+                case 7:
+                game.changeImage(4);
+                break
+
+                case 5:
+                game.changeImage(5);
+                break
+                case 3:
+                game.changeImage(6);
+                break
+                case 1:
+                game.changeImage(6);
+                break
+
+                }
             }
         }
     },
