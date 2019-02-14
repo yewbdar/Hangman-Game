@@ -1,7 +1,5 @@
 var game = {
     words: ["color", "animals", "person", "beautifull", "javascript", "document", "index","welcome","goodbye","valentine"],
-//     secondWord: "animals",
-//     theredWord: "persone",
     dashes: [],
     chance: 12,
     firstTimePressKey: 0,
@@ -42,12 +40,11 @@ var game = {
             }
         }
     },
-    
     changeImage: function (x) {
         var img = document.getElementById('hangman');
         img.src = "assets/images/man" + x + ".png";
     },
-    
+    // display the letter on the appropriate space  if the gussed letter is correct,else display the man image. 
     gussedWords: function (inputKey, word, dashes) {
         var gussedWords = false;
         if (this.chance > 0) {
@@ -58,7 +55,6 @@ var game = {
                 }
                 if (word.charAt(j) === inputKey) {
                     gussedWords = true;
-//                     debugger;
                     this.dashes[j] = inputKey;
                     document.getElementById("input").innerHTML = this.dashes.join(" ");
                     this.dispalayAllPressedKey(inputKey);
@@ -75,7 +71,6 @@ var game = {
                 }
             }
             if (gussedWords === false) {
-                //debugger;
                 this.chance = this.chance - 1;
                 document.getElementById("chance").innerHTML = this.chance.toString();
                  var audio = new Audio('assets/audio/Error-tone.mp3');
@@ -91,13 +86,10 @@ var game = {
                 break
                 case 9:
                 game.changeImage(3);
-  
                 break
-
                 case 7:
                 game.changeImage(3);
                 break
-
                 case 5:
                 game.changeImage(4);
                 break
@@ -112,7 +104,7 @@ var game = {
             }
         }
     },
-    
+    // if the  key pressed for the firest time , pick random word from array and start the game 
     stsrtGame: function (e) {
         if (this.firstTimePressKey === 0) {
             game.changeImage(1);
@@ -140,11 +132,13 @@ var game = {
 
     },
 }
+// listin event on key up and execute startGame method 
 document.onkeyup = function (e) {
-    //debugger;
+  
     game.stsrtGame(e.key);
      
 }
+// palay audio
 function playAudio(){
     var audio = new Audio('assets/audio/Drum-loops-and-synth-loops.mp3');
       audio.loop=true;  
