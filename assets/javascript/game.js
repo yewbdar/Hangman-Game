@@ -79,7 +79,7 @@ var game = {
                 this.chance = this.chance - 1;
                 document.getElementById("chance").innerHTML = this.chance.toString();
                  var audio = new Audio('assets/audio/Error-tone.mp3');
-//                   audio.play();
+                  audio.play();
                 switch(this.chance){
                 case 0:
                     game.changeImage(7);
@@ -147,6 +147,7 @@ document.onkeyup = function (e) {
 }
 function playAudio(){
     var audio = new Audio('assets/audio/Drum-loops-and-synth-loops.mp3');
-//       audio.loop=true;            
-//     audio.play();
+      audio.loop=true;  
+      audio.volume = 0.2;
+      audio.play();
 }
