@@ -142,6 +142,6 @@ document.onkeyup = function (e) {
 function playAudio(){
     var audio = new Audio('assets/audio/Drum-loops-and-synth-loops.mp3');
       audio.loop=true;  
-//       audio.volume = 0.2;
+      audio.volume = 2;
       audio.play();
 }
